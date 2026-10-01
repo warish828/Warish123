@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Warish Code Lab — a mobile-friendly browser coding playground for HTML, CSS and JavaScript.">
+  <title>Warish Code Lab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      <div class="brand">
+        <span class="brand-mark">&lt;/&gt;</span>
+        <div>
+          <strong>WARISH CODE LAB</strong>
+          <small>BUILD • TEST • LEARN</small>
+        </div>
+      </div>
+      <div class="top-actions">
+        <button class="ghost-btn" id="themeBtn" title="Toggle theme">☼</button>
+        <button class="primary-btn" id="runTopBtn">▶ Run</button>
+      </div>
+    </header>
+
+    <div class="layout">
+      <aside class="sidebar" id="sidebar">
+        <nav>
+          <button class="nav-item active" data-section="lab">⌘ <span>Code Lab</span></button>
+          <button class="nav-item" data-section="challenges">⚡ <span>Challenges</span></button>
+          <button class="nav-item" data-section="tutorials">📚 <span>Tutorials</span></button>
+          <button class="nav-item" data-section="reference">📖 <span>Reference</span></button>
+          <button class="nav-item" data-section="about">ℹ <span>About</span></button>
+        </nav>
+        <div class="side-card">
+          <span class="status-dot"></span>
+          <div>
+            <b>Browser Lab</b>
+            <small>No server required</small>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main">
+        <section id="lab" class="page-section active-section">
+          <div class="hero">
+            <div>
+              <p class="eyebrow">ONLINE PLAYGROUND</p>
+              <h1>Code it. <span>Run it.</span> See it.</h1>
+              <p class="hero-text">Write HTML, CSS and JavaScript and preview your project instantly — directly in your browser.</p>
+            </div>
+            <div class="hero-orb">&lt;/&gt;</div>
+          </div>
+
+          <div class="lab-toolbar">
+            <div class="file-tabs">
+              <button class="file-tab active" data-tab="html">index.html</button>
+              <button class="file-tab" data-tab="css">style.css</button>
+              <button class="file-tab" data-tab="js">script.js</button>
+            </div>
+            <div class="toolbar-actions">
+              <button class="ghost-btn" id="resetBtn">Reset</button>
+              <button class="ghost-btn" id="copyBtn">Copy</button>
+              <button class="primary-btn" id="runBtn">▶ Run</button>
+            </div>
+          </div>
+
+          <div class="workspace">
+            <div class="editor-card">
+              <div class="editor-head">
+                <span id="activeFile">index.html</span>
+                <span class="language-badge" id="languageBadge">HTML</span>
+              </div>
+              <textarea id="codeEditor" spellcheck="false" aria-label="Code editor"></textarea>
+              <div class="editor-foot">
+                <span id="lineInfo">Ln 1, Col 1</span>
+                <span>Local project</span>
+              </div>
+            </div>
+
+            <div class="preview-card">
+              <div class="preview-head">
+                <span>LIVE PREVIEW</span>
+                <button class="icon-btn" id="openPreviewBtn" title="Open preview">↗</button>
+              </div>
+              <iframe id="preview" title="Live preview" sandbox="allow-scripts"></iframe>
+            </div>
+          </div>
+
+          <div class="project-bar">
+            <div>
+              <b>Local Project</b>
+              <span>Saved automatically in this browser</span>
+            </div>
+            <div class="project-actions">
+              <button class="ghost-btn" id="downloadBtn">↓ Download</button>
+              <button class="ghost-btn" id="newProjectBtn">＋ New Project</button>
+            </div>
+          </div>
+        </section>
+
+        <section id="challenges" class="page-section">
+          <div class="section-title">
+            <p class="eyebrow">PRACTICE</p>
+            <h2>Code Challenges</h2>
+            <p>Small challenges to improve your frontend skills.</p>
+          </div>
+          <div class="challenge-grid" id="challengeGrid"></div>
+        </section>
+
+        <section id="tutorials" class="page-section">
+          <div class="section-title">
+            <p class="eyebrow">LEARN</p>
+            <h2>Frontend Tutorials</h2>
+            <p>Short lessons you can practice directly in the lab.</p>
+          </div>
+          <div class="lesson-grid">
+            <article class="lesson"><span>01</span><h3>HTML Basics</h3><p>Learn headings, paragraphs, links, images and semantic structure.</p><button class="text-btn" data-load="html">Open in Lab →</button></article>
+            <article class="lesson"><span>02</span><h3>CSS Basics</h3><p>Practice selectors, spacing, colors, flexbox and responsive layouts.</p><button class="text-btn" data-load="css">Open in Lab →</button></article>
+            <article class="lesson"><span>03</span><h3>JavaScript Basics</h3><p>Use variables, functions, events and DOM manipulation.</p><button class="text-btn" data-load="js">Open in Lab →</button></article>
+          </div>
+        </section>
+
+        <section id="reference" class="page-section">
+          <div class="section-title">
+            <p class="eyebrow">QUICK REFERENCE</p>
+            <h2>HTML • CSS • JavaScript</h2>
+            <p>Useful snippets for everyday frontend coding.</p>
+          </div>
+          <div class="reference-grid">
+            <article class="ref-card"><h3>HTML</h3><code>&lt;button&gt;Click me&lt;/button&gt;</code><code>&lt;h1&gt;Hello World&lt;/h1&gt;</code><code>&lt;a href="#"&gt;Link&lt;/a&gt;</code></article>
+            <article class="ref-card"><h3>CSS</h3><code>display: flex;</code><code>gap: 1rem;</code><code>border-radius: 12px;</code></article>
+            <article class="ref-card"><h3>JavaScript</h3><code>const name = "Warish";</code><code>document.querySelector()</code><code>addEventListener()</code></article>
+          </div>
+        </section>
+
+        <section id="about" class="page-section">
+          <div class="section-title">
+            <p class="eyebrow">ABOUT</p>
+            <h2>Warish Code Lab</h2>
+            <p>A lightweight browser coding playground designed to work well on phones and desktops.</p>
+          </div>
+          <div class="about-card">
+            <div class="about-icon">&lt;/&gt;</div>
+            <div>
+              <h3>Build without installing a full IDE</h3>
+              <p>Everything runs locally in your browser. Your current code is stored in localStorage on this device. No account or backend is required for the core lab.</p>
+              <p class="muted">For safety, the preview runs inside a sandboxed iframe.</p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
